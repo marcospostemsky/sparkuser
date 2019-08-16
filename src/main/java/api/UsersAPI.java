@@ -18,6 +18,10 @@ public class UsersAPI {
         final IUserService userService = new UserServiceSE();
         port(8086);
 
+        /**
+         * Recibe POST de logeo, y verificas que el username y password (recibidos por headers) existan en la base de
+         * datos, si es correcto devuelve un token y id de usuario por el body.
+         */
         post("/users" , (req , res) -> {
             res.type("application/json");
             String username = req.headers("username");
@@ -34,6 +38,11 @@ public class UsersAPI {
 
         });
 
+        /**
+         * Recibe GET a /sites, verificando token y id (recibidos por headers), si todo es correcto devuelve todos los
+         * sites de la API de Meli.
+         */
+
         get("/sites", (req , res) -> {
             res.type("application/json");
             String id = req.headers("id");
@@ -49,6 +58,11 @@ public class UsersAPI {
             return "{ \"StatusCode\": \"Token incorrecto\"}";
         });
 
+        /**
+         * Recibe GET a /sites/:id/categories, verificando token y id (recibidos por headers), si todo es correcto
+         * devuelve todos las categorias del site con :id de la API de Meli.
+         */
+
         get("/sites/:id/categories", (req , res) -> {
             res.type("application/json");
             String id = req.headers("id");
@@ -62,6 +76,11 @@ public class UsersAPI {
             res.status(403);
             return "{ \"StatusCode\": \"Token incorrecto\"}";
         });
+
+        /**
+         * Recibe GET a /sites/:id/categories/:idCat/:item, verificando token y id (recibidos por headers), si todo es
+         * correcto, solo devuelve un 200 para que la API ITEMS pueda verificar antes de almacenar el item.
+         */
 
         get("/sites/:id/categories/:idCat/:item", (req , res) -> {
             res.type("application/json");
