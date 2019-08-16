@@ -19,12 +19,12 @@ de un logeo previo.
 Para logear el usuario, debe enviar un POST a http://localhost:4567/users, que contenga por headers lo siguiente:
 
 
-->
+
 | Key| Value|
 | ----- | ---- |
 | username |"nombreUsuario" |
 | password| "passwordUsuario" | 
-<-
+
 
 
 * username : <"nombreUsuario">
