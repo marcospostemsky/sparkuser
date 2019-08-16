@@ -1,4 +1,4 @@
-## Spark API Items
+# Spark API Items [IT Academy - MELI]
 
 Para poder consumir correctamente la API de Items, debera disponer de lo siguiente:
 
@@ -10,8 +10,12 @@ en el puerto :9200.
                                                                                 en el puerto :8086.
 * API Spark Item [Git API Items](https://github.com/ferrariagustin93/sparkItem): escucha 
                                                                                  en el puerto :4567.
+## Autores
 
-# Caracteristicas de API Items
+* Agustín Ferrari
+* Marcos Postemsky
+
+## Características de API Items
 
 La API items se encuentra escuchando en el puerto :4567, y cualquier pedido que se haga al endpoint /sites/* requiere 
 de un logeo previo.
@@ -44,7 +48,7 @@ ser enviados por headers en los siguientes GETs para recibir respuesta de los si
     * /items
     * /items/:username
 
-# Ejecutar Elastic y cargar usuarios
+## Ejecutar Elastic y cargar usuarios
 
 Para poder logear usuarios desde Items, primero debe almancenarlos en el indice "users" de tipo "user". El ES debe estar
 escuchando en el puerto :9200.
