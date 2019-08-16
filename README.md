@@ -28,6 +28,12 @@ Para logear el usuario, debe enviar un POST a http://localhost:4567/users, que c
 Si el usuario y contraseña existen en la base de datos de Elastic, por body se devuelve un id y un token, estos deben
 ser enviados por headers en los siguientes GETs para recibir respuesta de los siguientes endpoints:
 
+| Key| Value|
+| ----- | ---- |
+| id |"bodyPOSTToken" |
+| token| "bodyIDToken" |
+
+
 * GET
     * /sites
     * /sites/:idsite/categories
