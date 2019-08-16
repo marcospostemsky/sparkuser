@@ -1,7 +1,13 @@
+package serviceImpl;
+
+import service.ILoginService;
+import clase.User;
+
 import java.io.IOException;
 import java.security.SecureRandom;
 
 public class LoginServiceToken implements ILoginService {
+
     public String loginUser(User user) {
 
         if (user != null){
@@ -11,7 +17,7 @@ public class LoginServiceToken implements ILoginService {
             String token = bytes.toString();
 
             try {
-                new UserServiceSE().updateUser(token,user);
+                new UserServiceSE().updateUser(token, user);
                 return token;
             } catch (IOException e) {
                 e.printStackTrace();

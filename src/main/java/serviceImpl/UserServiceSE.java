@@ -1,11 +1,12 @@
+package serviceImpl;
+
+import clase.User;
 import com.google.gson.Gson;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.action.search.MultiSearchRequest;
-import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.update.UpdateRequest;
@@ -18,10 +19,9 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import service.IUserService;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class UserServiceSE implements IUserService {
 
@@ -34,7 +34,7 @@ public class UserServiceSE implements IUserService {
 
         SearchRequest searchRequest = new SearchRequest("users");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(QueryBuilders.termQuery("username",username));
+        searchSourceBuilder.query(QueryBuilders.matchQuery("username",username));
 
         searchRequest.source(searchSourceBuilder);
 
@@ -47,7 +47,7 @@ public class UserServiceSE implements IUserService {
 
 
         if (searchHitsArr.length == 1){
-            User user = new Gson().fromJson(searchHitsArr[0].getSourceAsString(),User.class);
+            User user = new Gson().fromJson(searchHitsArr[0].getSourceAsString(), User.class);
             if (user.getPassword().equals(password)){
                 return user;
             }
@@ -66,7 +66,7 @@ public class UserServiceSE implements IUserService {
         try {
             getResponse = client.get(getRequest, RequestOptions.DEFAULT);
 
-            User user = new Gson().fromJson(getResponse.getSourceAsString(),User.class);
+            User user = new Gson().fromJson(getResponse.getSourceAsString(), User.class);
 
 
             client.close();
@@ -107,7 +107,7 @@ public class UserServiceSE implements IUserService {
 
         SearchRequest searchRequest = new SearchRequest("users");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(QueryBuilders.termQuery("username",username));
+        searchSourceBuilder.query(QueryBuilders.matchQuery("username",username));
 
         searchRequest.source(searchSourceBuilder);
 
@@ -120,7 +120,7 @@ public class UserServiceSE implements IUserService {
 
 
         if (searchHitsArr.length == 1){
-            User user = new Gson().fromJson(searchHitsArr[0].getSourceAsString(),User.class);
+            User user = new Gson().fromJson(searchHitsArr[0].getSourceAsString(), User.class);
             if (user.getPassword().equals(password)){
                 return searchHitsArr[0].getId();
             }

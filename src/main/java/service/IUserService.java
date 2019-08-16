@@ -1,3 +1,7 @@
+package service;
+
+import clase.User;
+
 import java.io.IOException;
 
 public interface IUserService {

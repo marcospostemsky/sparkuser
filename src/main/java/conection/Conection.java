@@ -1,4 +1,4 @@
-// El metodo get de la clase getJson retorna un Buffered Reader de la url que se le envíe
+package conection;// El metodo get de la clase getJson retorna un Buffered Reader de la url que se le envíe
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class getJSON {
+public class Conection {
 
     public static BufferedReader get(String urlGet){
         try {
@@ -17,7 +17,7 @@ public class getJSON {
             try {
                 URLConnection urlconnection = url.openConnection();
                 urlconnection.setRequestProperty("Accept","application/json");
-                urlconnection.setRequestProperty("User-Agent","Mozilla/5.0");
+                urlconnection.setRequestProperty("clase.User-Agent","Mozilla/5.0");
                 if(urlconnection instanceof HttpURLConnection) {
                     HttpURLConnection connection = (HttpURLConnection) urlconnection;
                     return  (new BufferedReader(new InputStreamReader(connection.getInputStream())));

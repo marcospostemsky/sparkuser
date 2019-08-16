@@ -1,11 +1,14 @@
-import com.google.gson.Gson;
+package serviceImpl;
+
+import service.IAPIService;
+import conection.Conection;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class SitesAPIService implements IAPIService {
     public String getSites() {
-        BufferedReader reader = getJSON.get("http://localhost:8084/sites");
+        BufferedReader reader = Conection.get("http://localhost:8084/sites");
 
         try {
            return reader.readLine();
@@ -17,7 +20,7 @@ public class SitesAPIService implements IAPIService {
     }
 
     public String getCategories(String id) {
-        BufferedReader reader = getJSON.get("http://localhost:8084/sites/"+id+"/categories");
+        BufferedReader reader = Conection.get("http://localhost:8084/sites/"+id+"/categories");
 
         try {
             return reader.readLine();

@@ -1,3 +1,5 @@
+package service;
+
 public interface IAPIService {
     public String getSites();
     public String getCategories(String id);
