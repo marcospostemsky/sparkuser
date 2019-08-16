@@ -3,13 +3,18 @@
 Para poder consumir correctamente la API de Items, debera disponer de lo siguiente:
 
 * Elastic Search (ES) 6.5.4 [Descargar](https://www.elastic.co/es/downloads/past-releases/elasticsearch-6-5-4): escucha 
-en el puerto :9200.
+en el puerto :9200. Base de datos de los usuarios.
 * API Spark Sites [Git API Sites](https://github.com/marcospostemsky/sparksite): escucha 
-                                                                                en el puerto :8084.
+                                                                                en el puerto :8084. API encargada de 
+                                                                                obtener sitios y categorias de MELI.
 * API Spark User [Git API Users](https://github.com/marcospostemsky/sparkuser): escucha 
-                                                                                en el puerto :8086.
+                                                                                en el puerto :8086. API encargada de la
+                                                                                autentificación de usuario.
 * API Spark Item [Git API Items](https://github.com/ferrariagustin93/sparkItem): escucha 
-                                                                                 en el puerto :4567.
+                                                                                 en el puerto :4567. API que permite 
+                                                                                 visualizar los sitios, categorias de MELi.
+                                                                                 Además, permite almacenar y visualizar 
+                                                                                 items almacenados.
 ## Autores
 
 * Agustín Ferrari
