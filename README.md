@@ -2,7 +2,7 @@
 
 Para poder consumir correctamente la API de Items, debera disponer de lo siguiente:
 
-* Elastic Search 6.5.4 [Descargar](https://www.elastic.co/es/downloads/past-releases/elasticsearch-6-5-4).
+* Elastic Search (ES) 6.5.4 [Descargar](https://www.elastic.co/es/downloads/past-releases/elasticsearch-6-5-4).
 * API Spark Sites [Git API Sites](https://github.com/marcospostemsky/sparksite).
 * API Spark User [Git API Users](https://github.com/marcospostemsky/sparkuser).
 * API Spark Item [Git API Items](https://github.com/ferrariagustin93/sparkItem).
@@ -45,3 +45,20 @@ ser enviados por headers en los siguientes GETs para recibir respuesta de los si
 
 Para poder logear usuarios desde Items, primero debe almancenarlos en el indice "users" de tipo "user". El ES debe estar
 escuchando en el puerto :9200.
+
+Para almacenar nuevos usuarios, debe enviar un POST, de la siguiente manera.
+
+* POST http://localhost:9200/users/user/_bulk
+
+    * Header Content-Type: application/json
+    
+    ```json
+    {"index":{}}
+    {"username":"marcos","password":"1234"}
+    {"index":{}}
+    {"username":"agustin","password":"123456"}
+    {"index":{}}
+    {"username":"agustinF","password":"mercadolibre"}
+    {"index":{}}
+    {"username":"marcosP","password":"mercadolibre!"}
+    ```
