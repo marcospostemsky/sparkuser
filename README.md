@@ -50,15 +50,18 @@ Para almacenar nuevos usuarios, debe enviar un POST, de la siguiente manera.
 
 * POST http://localhost:9200/users/user/_bulk
 
-    * Header Content-Type: application/json
+    * Header:
+        * Content-Type: application/json
     
-    ```json
-    {"index":{}}
-    {"username":"marcos","password":"1234"}
-    {"index":{}}
-    {"username":"agustin","password":"123456"}
-    {"index":{}}
-    {"username":"agustinF","password":"mercadolibre"}
-    {"index":{}}
-    {"username":"marcosP","password":"mercadolibre!"}
-    ```
+    * Body;
+        
+            ```json
+            {"index":{}}
+            {"username":"marcos","password":"1234"}
+            {"index":{}}
+            {"username":"agustin","password":"123456"}
+            {"index":{}}
+            {"username":"agustinF","password":"mercadolibre"}
+            {"index":{}}
+            {"username":"marcosP","password":"mercadolibre!"}
+            ```
