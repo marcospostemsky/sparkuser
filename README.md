@@ -2,10 +2,14 @@
 
 Para poder consumir correctamente la API de Items, debera disponer de lo siguiente:
 
-* Elastic Search (ES) 6.5.4 [Descargar](https://www.elastic.co/es/downloads/past-releases/elasticsearch-6-5-4).
-* API Spark Sites [Git API Sites](https://github.com/marcospostemsky/sparksite).
-* API Spark User [Git API Users](https://github.com/marcospostemsky/sparkuser).
-* API Spark Item [Git API Items](https://github.com/ferrariagustin93/sparkItem).
+* Elastic Search (ES) 6.5.4 [Descargar](https://www.elastic.co/es/downloads/past-releases/elasticsearch-6-5-4): escucha 
+en el puerto :9200.
+* API Spark Sites [Git API Sites](https://github.com/marcospostemsky/sparksite): escucha 
+                                                                                en el puerto :8084.
+* API Spark User [Git API Users](https://github.com/marcospostemsky/sparkuser): escucha 
+                                                                                en el puerto :8086.
+* API Spark Item [Git API Items](https://github.com/ferrariagustin93/sparkItem): escucha 
+                                                                                 en el puerto :4567.
 
 # Caracteristicas de API Items
 
