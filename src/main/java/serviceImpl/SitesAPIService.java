@@ -13,7 +13,7 @@ public class SitesAPIService implements IAPIService {
         try {
            return reader.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return null;
@@ -25,7 +25,7 @@ public class SitesAPIService implements IAPIService {
         try {
             return reader.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return null;
