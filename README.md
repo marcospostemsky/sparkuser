@@ -12,7 +12,15 @@ Para poder consumir correctamente la API de Items, debera disponer de lo siguien
 La API items se encuentra escuchando en el puerto :4567, y cualquier pedido que se haga al endpoint /sites/* requiere 
 de un logeo previo.
 
-Para logear el usuario, debe enviar un POST a http://localhost:4567/user, que contenga por headers lo siguiente:
+Para logear el usuario, debe enviar un POST a http://localhost:4567/users, que contenga por headers lo siguiente:
+
+
+
+| Key| Value|
+| ----- | ---- |
+| username |"nombreUsuario" |
+| password| "passwordUsuario" |
+
 
 * username : <"nombreUsuario">
 * password : <"passUsuario">
